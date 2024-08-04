@@ -1,0 +1,17 @@
+# Bỏ qua tất cả các thư mục __pycache__
+__pycache__/
+**/__pycache__/
+__pycache__\
+**\__pycache__\
+
+# Các thư mục data
+nq320k/ 
+__MACOSX/
+
+# Bỏ qua các tệp biên dịch Python
+*.pyc
+*.pyo
+
+# Bỏ qua các thư mục ảo của môi trường Python
+venv/
+env/
