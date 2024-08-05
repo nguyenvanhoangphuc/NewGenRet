@@ -6,6 +6,7 @@ __pycache__\
 
 # Các thư mục data
 nq320k/ 
+nq320k_split/ 
 __MACOSX/
 
 # Bỏ qua các tệp biên dịch Python

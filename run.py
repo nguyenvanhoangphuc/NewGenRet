@@ -630,7 +630,7 @@ def train(config):
     train_data = config.get('train_data', 'dataset/nq320k/train.json')
     corpus_data = config.get('corpus_data', 'dataset/nq320k/corpus_lite.json')
     epochs = config.get('epochs', 100)
-    in_batch_size = config.get('batch_size', 128)
+    in_batch_size = config.get('batch_size', 32)    # default: 128
     end_epoch = epochs
 
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
@@ -638,12 +638,12 @@ def train(config):
     save_step = 1
     batch_size = 1
     lr = 5e-4
-
+    # load model t5-base để train
     accelerator.print(save_path)
     t5 = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     model = Model(model=t5, code_length=code_length,
                   use_constraint=True, sk_epsilon=1, zero_inp=False, code_number=code_num)
-
+    # lấy các thông số của model trước đó
     if prev_model is not None:
         safe_load(model.model, f'{prev_model}.model')
         safe_load(model.centroids, f'{prev_model}.centroids')
@@ -654,11 +654,13 @@ def train(config):
 
     for i in range(code_length - 1):
         model.centroids[i].requires_grad_(False)
-
+    # load tokenizer của t5-base
     tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
-
+    # load train_data, corpus_data
     data = json.load(open(train_data))
+    # load train.json.qg.json là file chứa các câu hỏi nhưng nhiều câu hỏi cho một doc
     data.extend(json.load(open(f'{train_data}.qg.json')))
+    # load corpus_lite.json là file chứa các document mà được file train liên kết đến
     corpus = json.load(open(corpus_data))
 
     grouped_data = defaultdict(list)
@@ -667,6 +669,8 @@ def train(config):
         if isinstance(docid, list):
             docid = docid[0]
         grouped_data[docid].append(query)
+
+    # data là một list chứa các item, mỗi item là một list chứa list các câu hỏi và 1 docid duy nhất
     data = [[query_list, docid] for docid, query_list in grouped_data.items()]
 
     ids, aux_ids = None, None
@@ -1143,25 +1147,31 @@ def parse_args():
 
 
 def main():
+    # đọc các tham số từ command line
     args = parse_args()
+    # tạo config là một bản sao của args
     config = copy.deepcopy(vars(args))
-
+    # khởi tạo checkpoint ban đầu là None
     checkpoint = None
-
+    # lặp qua các giá trị từ 0 đến max_length-1 (3-1)
     for loop in range(args.max_length):
+        # cập nhật save_path, code_length theo loop
         config['save_path'] = args.save_path + f'-{loop + 1}-pre'
         config['code_length'] = loop + 1
+        # prev_model là checkpoint trước đó, đi kèm prev_id là file code của checkpoint trước đó (file này sẽ được tạo ra sau khi chạy train)
         config['prev_model'] = checkpoint
         config['prev_id'] = f'{checkpoint}.code' if checkpoint is not None else None
+        # lần đầu tiên chỉ chạy 1 epoch, sau đó chạy 10 epoch
         config['epochs'] = 1 if loop == 0 else 10
         config['loss_w'] = 1
+        # chạy train
         checkpoint = train(config)
         test_dr(config)
 
         config['save_path'] = args.save_path + f'-{loop + 1}'
         config['prev_model'] = checkpoint
         config['codebook_init'] = f'{checkpoint}.kmeans.{args.code_num}'
-        config['epochs'] = 200
+        config['epochs'] = 10   # default: 200
         config['loss_w'] = 2
         checkpoint = train(config)
         test_dr(config)
@@ -1174,7 +1184,7 @@ def main():
     config['prev_model'] = checkpoint
     add_last(f'{checkpoint}.code', args.code_num, f'{checkpoint}.code.last')
     config['prev_id'] = f'{checkpoint}.code.last'
-    config['epochs'] = 1000
+    config['epochs'] = 10     # default: 1000
     config['loss_w'] = 3
     checkpoint = train(config)
     test_dr(config)
