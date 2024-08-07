@@ -1,0 +1,141 @@
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+You are using the default legacy behaviour of the <class 'transformers.models.t5.tokenization_t5.T5Tokenizer'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565
+====Input Arguments====
+{
+  "model_name": "sonoisa/t5-base-japanese",
+  "code_num": 64,
+  "max_length": 3,
+  "train_data": "data_ja/train.json",
+  "dev_data": "data_ja/dev.json",
+  "corpus_data": "data_ja/corpus_lite.json",
+  "save_path": "out_ja/model"
+}
+out_ja/model-1-pre
+data size=680
+Training out_ja/model-1-pre 0
+  0%|          | 0/680 [00:00<?, ?it/s]  0%|          | 0/680 [00:01<?, ?it/s, loss=4.21]  0%|          | 1/680 [00:01<15:21,  1.36s/it, loss=4.21]  0%|          | 1/680 [00:01<15:21,  1.36s/it, loss=3.96]  0%|          | 2/680 [00:01<07:46,  1.45it/s, loss=3.96]  0%|          | 2/680 [00:01<07:46,  1.45it/s, loss=3.98]  0%|          | 3/680 [00:01<05:19,  2.12it/s, loss=3.98]  0%|          | 3/680 [00:02<05:19,  2.12it/s, loss=3.99]  1%|          | 4/680 [00:02<04:09,  2.71it/s, loss=3.99]  1%|          | 4/680 [00:02<04:09,  2.71it/s, loss=3.98]  1%|          | 5/680 [00:02<03:30,  3.21it/s, loss=3.98]  1%|          | 5/680 [00:02<03:30,  3.21it/s, loss=3.94]  1%|          | 6/680 [00:02<03:07,  3.59it/s, loss=3.94]  1%|          | 6/680 [00:02<03:07,  3.59it/s, loss=3.9]   1%|          | 7/680 [00:02<02:53,  3.87it/s, loss=3.9]  1%|          | 7/680 [00:02<02:53,  3.87it/s, loss=3.84]  1%|          | 8/680 [00:02<02:43,  4.10it/s, loss=3.84]  1%|          | 8/680 [00:03<02:43,  4.10it/s, loss=3.78]  1%|▏         | 9/680 [00:03<02:36,  4.27it/s, loss=3.78]  1%|▏         | 9/680 [00:03<02:36,  4.27it/s, loss=3.7]   1%|▏         | 10/680 [00:03<02:31,  4.41it/s, loss=3.7]  1%|▏         | 10/680 [00:03<02:31,  4.41it/s, loss=3.66]  2%|▏         | 11/680 [00:03<02:28,  4.50it/s, loss=3.66]  2%|▏         | 11/680 [00:03<02:28,  4.50it/s, loss=3.61]  2%|▏         | 12/680 [00:03<02:26,  4.57it/s, loss=3.61]  2%|▏         | 12/680 [00:03<02:26,  4.57it/s, loss=3.56]  2%|▏         | 13/680 [00:03<02:24,  4.62it/s, loss=3.56]  2%|▏         | 13/680 [00:04<02:24,  4.62it/s, loss=3.54]  2%|▏         | 14/680 [00:04<02:23,  4.66it/s, loss=3.54]  2%|▏         | 14/680 [00:04<02:23,  4.66it/s, loss=3.49]  2%|▏         | 15/680 [00:04<02:21,  4.69it/s, loss=3.49]  2%|▏         | 15/680 [00:04<02:21,  4.69it/s, loss=3.43]  2%|▏         | 16/680 [00:04<02:21,  4.70it/s, loss=3.43]  2%|▏         | 16/680 [00:04<02:21,  4.70it/s, loss=3.39]  2%|▎         | 17/680 [00:04<02:20,  4.72it/s, loss=3.39]  2%|▎         | 17/680 [00:04<02:20,  4.72it/s, loss=3.36]  3%|▎         | 18/680 [00:04<02:21,  4.69it/s, loss=3.36]  3%|▎         | 18/680 [00:05<02:21,  4.69it/s, loss=3.3]   3%|▎         | 19/680 [00:05<02:20,  4.71it/s, loss=3.3]  3%|▎         | 19/680 [00:05<02:20,  4.71it/s, loss=3.26]  3%|▎         | 20/680 [00:05<02:19,  4.74it/s, loss=3.26]  3%|▎         | 20/680 [00:05<02:19,  4.74it/s, loss=3.23]  3%|▎         | 21/680 [00:05<02:18,  4.75it/s, loss=3.23]  3%|▎         | 21/680 [00:05<02:18,  4.75it/s, loss=3.19]  3%|▎         | 21/680 [00:09<04:55,  2.23it/s, loss=3.19]
+Save model out_ja/model-1-pre/0.pt
+DR evaluation out_ja/model-1-pre
+292 743
+####################
+DR evaluation out_ja/model-1-pre/0.pt
+## Model # new keys in file: [] # no match keys: []
+  0%|          | 0/6 [00:00<?, ?it/s] 17%|█▋        | 1/6 [00:00<00:04,  1.10it/s] 33%|███▎      | 2/6 [00:01<00:01,  2.16it/s] 50%|█████     | 3/6 [00:01<00:01,  2.92it/s] 67%|██████▋   | 4/6 [00:01<00:00,  3.36it/s] 83%|████████▎ | 5/6 [00:01<00:00,  3.62it/s]100%|██████████| 6/6 [00:01<00:00,  4.16it/s]100%|██████████| 6/6 [00:01<00:00,  3.03it/s]
+(743, 768)
+build index of 743 instances, time cost =0.0019104480743408203
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:00<00:00,  3.92it/s]100%|██████████| 3/3 [00:00<00:00,  7.46it/s]
+search 292 queries, time cost =0.005032777786254883
+Doc_code balance {'Avg': 0.05585464333781964, 'Max': 0.05585464333781964, 'Min': 0.05585464333781964, 'Flat': 0.5020188425302826}
+Doc_code conflict {'Max': 406, 'Min': 337, 'Type': 2, '%': 0.0026917900403768506}
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Kmeans balance {'Avg': 0.594885598923284, 'Max': 0.594885598923284, 'Min': 0.594885598923284, 'Flat': 0.594885598923284}
+Kmeans conflict {'Max': 33, 'Min': 5, 'Type': 64, '%': 0.08613728129205922}
+out_ja/model-1
+## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+Copy 0.weight torch.Size([64, 768]) from torch.Size([64, 768])
+data size=680
+Training out_ja/model-1 0
+  0%|          | 0/680 [00:00<?, ?it/s]  0%|          | 0/680 [00:00<?, ?it/s, loss=410]  0%|          | 1/680 [00:00<05:43,  1.98it/s, loss=410]  0%|          | 1/680 [00:00<05:43,  1.98it/s, loss=260]  0%|          | 2/680 [00:00<03:47,  2.98it/s, loss=260]  0%|          | 2/680 [00:00<03:47,  2.98it/s, loss=214]  0%|          | 3/680 [00:00<03:10,  3.55it/s, loss=214]  0%|          | 3/680 [00:01<03:10,  3.55it/s, loss=213]  1%|          | 4/680 [00:01<02:53,  3.89it/s, loss=213]  1%|          | 4/680 [00:01<02:53,  3.89it/s, loss=200]  1%|          | 5/680 [00:01<03:32,  3.18it/s, loss=200]  1%|          | 5/680 [00:01<03:32,  3.18it/s, loss=176]  1%|          | 6/680 [00:01<03:07,  3.59it/s, loss=176]  1%|          | 6/680 [00:01<03:07,  3.59it/s, loss=159]  1%|          | 7/680 [00:01<02:53,  3.89it/s, loss=159]  1%|          | 7/680 [00:02<02:53,  3.89it/s, loss=145]  1%|          | 8/680 [00:02<02:42,  4.13it/s, loss=145]  1%|          | 8/680 [00:02<02:42,  4.13it/s, loss=133]  1%|▏         | 9/680 [00:02<02:38,  4.24it/s, loss=133]  1%|▏         | 9/680 [00:02<02:38,  4.24it/s, loss=123]  1%|▏         | 10/680 [00:02<02:36,  4.28it/s, loss=123]  1%|▏         | 10/680 [00:02<02:36,  4.28it/s, loss=114]  2%|▏         | 11/680 [00:02<02:31,  4.42it/s, loss=114]  2%|▏         | 11/680 [00:03<02:31,  4.42it/s, loss=108]  2%|▏         | 12/680 [00:03<02:28,  4.50it/s, loss=108]  2%|▏         | 12/680 [00:03<02:28,  4.50it/s, loss=102]  2%|▏         | 13/680 [00:03<02:26,  4.54it/s, loss=102]  2%|▏         | 13/680 [00:03<02:26,  4.54it/s, loss=96.3]  2%|▏         | 14/680 [00:03<02:31,  4.40it/s, loss=96.3]  2%|▏         | 14/680 [00:03<02:31,  4.40it/s, loss=91.4]  2%|▏         | 15/680 [00:03<02:32,  4.36it/s, loss=91.4]  2%|▏         | 15/680 [00:04<02:32,  4.36it/s, loss=86.8]  2%|▏         | 16/680 [00:04<02:33,  4.33it/s, loss=86.8]  2%|▏         | 16/680 [00:04<02:33,  4.33it/s, loss=82.9]  2%|▎         | 17/680 [00:04<02:33,  4.31it/s, loss=82.9]  2%|▎         | 17/680 [00:04<02:33,  4.31it/s, loss=79.5]  3%|▎         | 18/680 [00:04<02:34,  4.29it/s, loss=79.5]  3%|▎         | 18/680 [00:04<02:34,  4.29it/s, loss=76.4]  3%|▎         | 19/680 [00:04<02:31,  4.36it/s, loss=76.4]  3%|▎         | 19/680 [00:04<02:31,  4.36it/s, loss=73.6]  3%|▎         | 20/680 [00:04<02:33,  4.30it/s, loss=73.6]  3%|▎         | 20/680 [00:05<02:33,  4.30it/s, loss=71.1]  3%|▎         | 21/680 [00:05<02:33,  4.31it/s, loss=71.1]  3%|▎         | 21/680 [00:05<02:33,  4.31it/s, loss=69]    3%|▎         | 22/680 [00:08<13:06,  1.19s/it, loss=69]  3%|▎         | 22/680 [00:08<13:06,  1.19s/it, loss=66.5]  3%|▎         | 23/680 [00:08<09:54,  1.11it/s, loss=66.5]  3%|▎         | 23/680 [00:09<09:54,  1.11it/s, loss=65.1]  4%|▎         | 24/680 [00:09<07:40,  1.42it/s, loss=65.1]  4%|▎         | 24/680 [00:09<07:40,  1.42it/s, loss=63.5]  4%|▎         | 25/680 [00:09<06:02,  1.81it/s, loss=63.5]  4%|▎         | 25/680 [00:09<06:02,  1.81it/s, loss=61.6]  4%|▍         | 26/680 [00:09<04:57,  2.20it/s, loss=61.6]  4%|▍         | 26/680 [00:09<04:57,  2.20it/s, loss=60.3]  4%|▍         | 27/680 [00:09<04:10,  2.61it/s, loss=60.3]  4%|▍         | 27/680 [00:09<04:10,  2.61it/s, loss=59.2]  4%|▍         | 28/680 [00:09<03:40,  2.96it/s, loss=59.2]  4%|▍         | 28/680 [00:10<03:40,  2.96it/s, loss=58]    4%|▍         | 29/680 [00:10<03:15,  3.33it/s, loss=58]  4%|▍         | 29/680 [00:10<03:15,  3.33it/s, loss=56.6]  4%|▍         | 30/680 [00:10<03:00,  3.60it/s, loss=56.6]  4%|▍         | 30/680 [00:10<03:00,  3.60it/s, loss=55.6]  5%|▍         | 31/680 [00:10<02:48,  3.85it/s, loss=55.6]  5%|▍         | 31/680 [00:10<02:48,  3.85it/s, loss=54.3]  5%|▍         | 32/680 [00:10<02:40,  4.03it/s, loss=54.3]  5%|▍         | 32/680 [00:11<02:40,  4.03it/s, loss=53.2]  5%|▍         | 33/680 [00:11<02:34,  4.19it/s, loss=53.2]  5%|▍         | 33/680 [00:11<02:34,  4.19it/s, loss=52.1]  5%|▌         | 34/680 [00:11<02:29,  4.31it/s, loss=52.1]  5%|▌         | 34/680 [00:11<02:29,  4.31it/s, loss=51.1]  5%|▌         | 35/680 [00:11<02:24,  4.47it/s, loss=51.1]  5%|▌         | 35/680 [00:11<02:24,  4.47it/s, loss=50]    5%|▌         | 36/680 [00:11<02:23,  4.48it/s, loss=50]  5%|▌         | 36/680 [00:11<02:23,  4.48it/s, loss=49.4]  5%|▌         | 37/680 [00:11<02:22,  4.53it/s, loss=49.4]  5%|▌         | 37/680 [00:12<02:22,  4.53it/s, loss=48.3]  6%|▌         | 38/680 [00:12<02:21,  4.55it/s, loss=48.3]  6%|▌         | 38/680 [00:12<02:21,  4.55it/s, loss=47.4]  6%|▌         | 39/680 [00:12<02:19,  4.60it/s, loss=47.4]  6%|▌         | 39/680 [00:12<02:19,  4.60it/s, loss=46.6]  6%|▌         | 40/680 [00:12<02:20,  4.55it/s, loss=46.6]  6%|▌         | 40/680 [00:12<02:20,  4.55it/s, loss=45.8]  6%|▌         | 41/680 [00:12<02:17,  4.66it/s, loss=45.8]  6%|▌         | 41/680 [00:12<02:17,  4.66it/s, loss=45]    6%|▌         | 42/680 [00:12<02:18,  4.62it/s, loss=45]  6%|▌         | 42/680 [00:13<02:18,  4.62it/s, loss=44.3]  6%|▋         | 43/680 [00:13<02:16,  4.66it/s, loss=44.3]  6%|▋         | 43/680 [00:13<02:16,  4.66it/s, loss=43.5]  6%|▋         | 44/680 [00:13<02:17,  4.61it/s, loss=43.5]  6%|▋         | 44/680 [00:13<02:17,  4.61it/s, loss=43]    7%|▋         | 45/680 [00:13<02:18,  4.59it/s, loss=43]  7%|▋         | 45/680 [00:13<02:18,  4.59it/s, loss=42.6]  7%|▋         | 46/680 [00:13<02:18,  4.59it/s, loss=42.6]  7%|▋         | 46/680 [00:14<02:18,  4.59it/s, loss=42]    7%|▋         | 47/680 [00:14<02:17,  4.59it/s, loss=42]  7%|▋         | 47/680 [00:14<02:17,  4.59it/s, loss=41.5]  7%|▋         | 48/680 [00:14<02:17,  4.60it/s, loss=41.5]  7%|▋         | 48/680 [00:14<02:17,  4.60it/s, loss=41.2]  7%|▋         | 49/680 [00:14<02:16,  4.62it/s, loss=41.2]  7%|▋         | 49/680 [00:14<02:16,  4.62it/s, loss=40.6]  7%|▋         | 50/680 [00:14<02:16,  4.63it/s, loss=40.6]  7%|▋         | 50/680 [00:14<02:16,  4.63it/s, loss=40]    8%|▊         | 51/680 [00:14<02:13,  4.70it/s, loss=40]  8%|▊         | 51/680 [00:15<02:13,  4.70it/s, loss=39.5]  8%|▊         | 52/680 [00:15<02:13,  4.70it/s, loss=39.5]  8%|▊         | 52/680 [00:15<02:13,  4.70it/s, loss=39.1]  8%|▊         | 53/680 [00:15<02:12,  4.72it/s, loss=39.1]  8%|▊         | 53/680 [00:15<02:12,  4.72it/s, loss=38.6]  8%|▊         | 54/680 [00:15<02:14,  4.65it/s, loss=38.6]  8%|▊         | 54/680 [00:15<02:14,  4.65it/s, loss=38.2]  8%|▊         | 55/680 [00:15<02:15,  4.62it/s, loss=38.2]  8%|▊         | 55/680 [00:16<02:15,  4.62it/s, loss=37.7]  8%|▊         | 56/680 [00:16<02:16,  4.56it/s, loss=37.7]  8%|▊         | 56/680 [00:16<02:16,  4.56it/s, loss=37.2]  8%|▊         | 57/680 [00:16<02:15,  4.59it/s, loss=37.2]  8%|▊         | 57/680 [00:16<02:15,  4.59it/s, loss=36.9]  9%|▊         | 58/680 [00:16<02:15,  4.60it/s, loss=36.9]  9%|▊         | 58/680 [00:16<02:15,  4.60it/s, loss=36.5]  9%|▊         | 59/680 [00:16<02:15,  4.59it/s, loss=36.5]  9%|▊         | 59/680 [00:16<02:15,  4.59it/s, loss=36.2]  9%|▉         | 60/680 [00:16<02:15,  4.58it/s, loss=36.2]  9%|▉         | 60/680 [00:17<02:15,  4.58it/s, loss=36]    9%|▉         | 61/680 [00:17<02:13,  4.64it/s, loss=36]  9%|▉         | 61/680 [00:17<02:13,  4.64it/s, loss=35.7]  9%|▉         | 62/680 [00:17<02:13,  4.63it/s, loss=35.7]  9%|▉         | 62/680 [00:17<02:13,  4.63it/s, loss=35.3]  9%|▉         | 63/680 [00:17<02:11,  4.69it/s, loss=35.3]  9%|▉         | 63/680 [00:17<02:11,  4.69it/s, loss=35.1]  9%|▉         | 64/680 [00:17<02:12,  4.66it/s, loss=35.1]  9%|▉         | 64/680 [00:17<02:12,  4.66it/s, loss=34.8] 10%|▉         | 65/680 [00:17<02:10,  4.70it/s, loss=34.8]Initialization complete
+Iteration  0, inertia 4710.714
+Iteration  1, inertia 2555.491
+Iteration  2, inertia 2465.836
+Iteration  3, inertia 2449.190
+Iteration  4, inertia 2448.464
+Converged at iteration 4: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 5552.144
+Iteration  1, inertia 2635.293
+Iteration  2, inertia 2457.889
+Iteration  3, inertia 2445.607
+Iteration  4, inertia 2440.723
+Iteration  5, inertia 2437.660
+Iteration  6, inertia 2436.104
+Iteration  7, inertia 2435.356
+Iteration  8, inertia 2435.078
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 4465.869
+Iteration  1, inertia 2532.897
+Iteration  2, inertia 2476.378
+Iteration  3, inertia 2460.223
+Iteration  4, inertia 2458.212
+Iteration  5, inertia 2457.745
+Converged at iteration 5: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 7050.688
+Iteration  1, inertia 2795.014
+Iteration  2, inertia 2496.255
+Iteration  3, inertia 2446.805
+Iteration  4, inertia 2435.751
+Iteration  5, inertia 2435.500
+Converged at iteration 5: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 5779.855
+Iteration  1, inertia 2632.674
+Iteration  2, inertia 2467.379
+Iteration  3, inertia 2455.035
+Iteration  4, inertia 2452.347
+Iteration  5, inertia 2450.789
+Iteration  6, inertia 2450.615
+Converged at iteration 6: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 5546.198
+Iteration  1, inertia 2676.612
+Iteration  2, inertia 2508.080
+Iteration  3, inertia 2476.226
+Iteration  4, inertia 2468.940
+Iteration  5, inertia 2465.564
+Iteration  6, inertia 2463.424
+Iteration  7, inertia 2462.346
+Iteration  8, inertia 2461.851
+Iteration  9, inertia 2461.179
+Initialization complete
+Iteration  0, inertia 4630.362
+Iteration  1, inertia 2543.433
+Iteration  2, inertia 2471.991
+Iteration  3, inertia 2457.680
+Iteration  4, inertia 2452.928
+Iteration  5, inertia 2450.820
+Iteration  6, inertia 2449.627
+Iteration  7, inertia 2447.877
+Iteration  8, inertia 2447.444
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 4879.273
+Iteration  1, inertia 2586.521
+Iteration  2, inertia 2483.410
+Iteration  3, inertia 2458.408
+Iteration  4, inertia 2448.093
+Iteration  5, inertia 2444.111
+Iteration  6, inertia 2442.839
+Iteration  7, inertia 2442.456
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.443091e-04
+Initialization complete
+Iteration  0, inertia 6996.633
+Iteration  1, inertia 2829.605
+Iteration  2, inertia 2476.606
+Iteration  3, inertia 2449.804
+Iteration  4, inertia 2441.954
+Iteration  5, inertia 2439.323
+Iteration  6, inertia 2437.631
+Iteration  7, inertia 2437.175
+Iteration  8, inertia 2436.930
+Iteration  9, inertia 2436.275
+Initialization complete
+Iteration  0, inertia 4876.579
+Iteration  1, inertia 2608.105
+Iteration  2, inertia 2502.495
+Iteration  3, inertia 2481.760
+Iteration  4, inertia 2475.388
+Iteration  5, inertia 2472.526
+Iteration  6, inertia 2468.393
+Iteration  7, inertia 2466.320
+Iteration  8, inertia 2466.116
+Iteration  9, inertia 2465.969
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 1.443091e-04
+/home/hoangphuc/.conda/envs/pytorch/lib/python3.9/site-packages/joblib/externals/loky/backend/resource_tracker.py:314: UserWarning: resource_tracker: There appear to be 16 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/hoangphuc/.conda/envs/pytorch/lib/python3.9/site-packages/joblib/externals/loky/backend/resource_tracker.py:314: UserWarning: resource_tracker: There appear to be 1 leaked folder objects to clean up at shutdown
+  warnings.warn(

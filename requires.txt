@@ -1,3 +1,4 @@
 transformers
 accelerate
 k_means_constrained
+faiss-gpu

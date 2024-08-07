@@ -16,3 +16,8 @@ __MACOSX/
 # Bỏ qua các thư mục ảo của môi trường Python
 venv/
 env/
+
+# checkpoint
+data_ja/
+out/
+out_ja/

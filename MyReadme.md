@@ -13,6 +13,8 @@ tar -xf dataset/nq320k.zip
 # run genret for nq320k dataset
 python run.py --model_name t5-base --code_num 512 --max_length 3 --train_data nq320k/train.json --dev_data nq320k/dev.json --corpus_data nq320k/corpus_lite.json --save_path out/model
 
+python run.py --model_name t5-base --code_num 512 --max_length 3 --train_data nq320k_split/train.json --dev_data nq320k_split/dev.json --corpus_data nq320k_split/corpus_lite.json --save_path out/model
+
 Chú thích: 
 - file train.json là một list các item, mỗi item là một list gồm 2 phần tử, phần tử đầu tiên sẽ là question (hoặc query), phần tử thứ 2 là số thứ tự (id) của document mà nó liên quan đến trong bộ corpus_lite.json
 + số lượng item: 307373

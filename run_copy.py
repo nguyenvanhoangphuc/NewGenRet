@@ -1,6 +1,5 @@
 import copy
 from abc import ABC
-import sys
 
 from transformers import T5EncoderModel, AutoTokenizer, AutoModelForSeq2SeqLM
 from torch.nn.utils.rnn import pad_sequence
@@ -375,6 +374,9 @@ class OurTrainer:
 
     @staticmethod
     def train_step(model: Model, batch, gathered=None):
+        print(batch['query'].shape)
+        print(batch['ids'].shape)
+        print(batch['doc'].shape)
         query_outputs: QuantizeOutput = model(input_ids=batch['query'], attention_mask=batch['query'].ne(0),
                                               decoder_input_ids=batch['ids'],
                                               aux_ids=batch['aux_ids'], return_code=True,
@@ -422,6 +424,9 @@ class OurTrainer:
                 code_number = model.module.code_number
             else:
                 code_number = model.code_number
+            print(query_outputs.code_logits.shape)
+            print(query_outputs.code_logits.view(-1, code_number).shape)
+            print(batch['ids'][:, 1:].reshape(-1).shape)
             query_code_loss = F.cross_entropy(query_outputs.code_logits.view(-1, code_number),
                                               batch['ids'][:, 1:].reshape(-1))
             doc_code_loss = F.cross_entropy(doc_outputs.code_logits.view(-1, code_number),
@@ -595,7 +600,7 @@ def safe_load_embedding(model, file):
     model.load_state_dict(matched_state_dict, strict=False)
 
 
-def safe_save(accelerator, model, save_path, epoch, end_epoch=100, save_step=9, last_checkpoint=None):
+def safe_save(accelerator, model, save_path, epoch, end_epoch=100, save_step=1, last_checkpoint=None):
     os.makedirs(save_path, exist_ok=True)
     accelerator.wait_for_everyone()
     if accelerator.is_local_main_process and epoch < end_epoch and epoch % save_step == 0:
@@ -637,7 +642,7 @@ def train(config):
 
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
-    save_step = 9
+    save_step = 1
     batch_size = 1
     lr = 5e-4
     # load model t5-base để train
@@ -1128,6 +1133,7 @@ def add_last(file_in, code_num, file_out):
     docid_to_doc = defaultdict(list)
     new_corpus_ids = []
     for i, item in enumerate(corpus_ids):
+        print(item)
         docid_to_doc[str(item)].append(i)
         new_corpus_ids.append(item + [len(docid_to_doc[str(item)]) % code_num])
     json.dump(new_corpus_ids, open(file_out, 'w'))
@@ -1156,39 +1162,40 @@ def main():
     # tạo config là một bản sao của args
     config = copy.deepcopy(vars(args))
     # khởi tạo checkpoint ban đầu là None
-    checkpoint = None
+    checkpoint = 'out_ja/model-3/9.pt'
     # lặp qua các giá trị từ 0 đến max_length-1 (3-1)
-    for loop in range(args.max_length):
-        # cập nhật save_path, code_length theo loop
-        config['save_path'] = args.save_path + f'-{loop + 1}-pre'
-        config['code_length'] = loop + 1
-        # prev_model là checkpoint trước đó, đi kèm prev_id là file code của checkpoint trước đó (file này sẽ được tạo ra sau khi chạy train)
-        config['prev_model'] = checkpoint
-        config['prev_id'] = f'{checkpoint}.code' if checkpoint is not None else None
-        # lần đầu tiên chỉ chạy 1 epoch, sau đó chạy 10 epoch
-        config['epochs'] = 1 if loop == 0 else 10
-        config['loss_w'] = 1 
-        # chạy train
-        checkpoint = train(config)
-        test_dr(config)
+    # for loop in range(args.max_length):
+    #     # cập nhật save_path, code_length theo loop
+    #     config['save_path'] = args.save_path + f'-{loop + 1}-pre'
+    #     config['code_length'] = loop + 1
+    #     # prev_model là checkpoint trước đó, đi kèm prev_id là file code của checkpoint trước đó (file này sẽ được tạo ra sau khi chạy train)
+    #     config['prev_model'] = checkpoint
+    #     config['prev_id'] = f'{checkpoint}.code' if checkpoint is not None else None
+    #     # lần đầu tiên chỉ chạy 1 epoch, sau đó chạy 10 epoch
+    #     config['epochs'] = 1 if loop == 0 else 10
+    #     config['loss_w'] = 1
+    #     # chạy train
+    #     checkpoint = train(config)
+    #     test_dr(config)
 
-        config['save_path'] = args.save_path + f'-{loop + 1}'
-        config['prev_model'] = checkpoint
-        config['codebook_init'] = f'{checkpoint}.kmeans.{args.code_num}'
-        config['epochs'] = 199   # default: 200
-        config['loss_w'] = 2
-        checkpoint = train(config)
-        test_dr(config)
+    #     config['save_path'] = args.save_path + f'-{loop + 1}'
+    #     config['prev_model'] = checkpoint
+    #     config['codebook_init'] = f'{checkpoint}.kmeans.{args.code_num}'
+    #     config['epochs'] = 10   # default: 200
+    #     config['loss_w'] = 2
+    #     checkpoint = train(config)
+    #     test_dr(config)
 
-        test(config)
+    #     test(config)
 
     loop = args.max_length
     config['save_path'] = args.save_path + f'-{loop}-fit'
     config['code_length'] = loop + 1
     config['prev_model'] = checkpoint
     add_last(f'{checkpoint}.code', args.code_num, f'{checkpoint}.code.last')
+    config['codebook_init'] = f'{checkpoint}.kmeans.{args.code_num}'
     config['prev_id'] = f'{checkpoint}.code'
-    config['epochs'] = 1000     # default: 1000
+    config['epochs'] = 10     # default: 1000
     config['loss_w'] = 3
     checkpoint = train(config)
     test_dr(config)
