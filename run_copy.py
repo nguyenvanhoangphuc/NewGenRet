@@ -840,6 +840,7 @@ def test(config):
 
         corpus_ids = [[0, *line] for line in json.load(open(f'{save_path}/{epoch}.pt.code'))]
         safe_load(model, f'{save_path}/{epoch}.pt')
+        print("corpus_ids[0]", corpus_ids[0])
         tree = Tree()
         tree.set_all(corpus_ids)
 
@@ -1162,7 +1163,7 @@ def main():
     # tạo config là một bản sao của args
     config = copy.deepcopy(vars(args))
     # khởi tạo checkpoint ban đầu là None
-    checkpoint = 'out_ja/model-3/9.pt'
+    # checkpoint = 'out_ja/model-3/9.pt'
     # lặp qua các giá trị từ 0 đến max_length-1 (3-1)
     # for loop in range(args.max_length):
     #     # cập nhật save_path, code_length theo loop
@@ -1188,6 +1189,7 @@ def main():
 
     #     test(config)
 
+    checkpoint = 'out_nq/model-3/9.pt'
     loop = args.max_length
     config['save_path'] = args.save_path + f'-{loop}-fit'
     config['code_length'] = loop + 1

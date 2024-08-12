@@ -8,6 +8,8 @@ __pycache__\
 nq320k/ 
 nq320k_split/ 
 __MACOSX/
+dataset/
+out_msmarco/
 
 # Bỏ qua các tệp biên dịch Python
 *.pyc
