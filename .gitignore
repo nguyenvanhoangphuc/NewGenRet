@@ -10,6 +10,7 @@ nq320k_split/
 __MACOSX/
 dataset/
 out_msmarco/
+out_bm25/
 
 # Bỏ qua các tệp biên dịch Python
 *.pyc
@@ -23,3 +24,4 @@ env/
 data_ja/
 out/
 out_ja/
+output.log

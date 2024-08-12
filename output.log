@@ -139,3 +139,730 @@ Converged at iteration 9: center shift 0.000000e+00 within tolerance 1.443091e-0
   warnings.warn(
 /home/hoangphuc/.conda/envs/pytorch/lib/python3.9/site-packages/joblib/externals/loky/backend/resource_tracker.py:314: UserWarning: resource_tracker: There appear to be 1 leaked folder objects to clean up at shutdown
   warnings.warn(
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "dataset/ms_marco_bm25_1208/train.json",
+  "dev_data": "dataset/ms_marco_bm25_1208/dev.json",
+  "corpus_data": "dataset/ms_marco_bm25_1208/corpus_lite.json",
+  "save_path": "out_bm25/model"
+}
+out_bm25/model-1-pre
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "dataset/ms_marco_bm25_1208/train_retrieval_ms_marco.json",
+  "dev_data": "dataset/ms_marco_bm25_1208/validation_retrieval_ms_marco.json",
+  "corpus_data": "dataset/ms_marco_bm25_1208/legal_corpus_ms_marco.json",
+  "save_path": "out_bm25/model"
+}
+out_bm25/model-1-pre
+data size=2047
+Training out_bm25/model-1-pre 0
+Save model out_bm25/model-1-pre/0.pt
+DR evaluation out_bm25/model-1-pre
+1116 4088
+####################
+DR evaluation out_bm25/model-1-pre/0.pt
+## Model # new keys in file: [] # no match keys: []
+(4088, 768)
+build index of 4088 instances, time cost =0.008553028106689453
+search 1116 queries, time cost =0.022403240203857422
+Doc_code balance {'Avg': 0.07216242661448136, 'Max': 0.07216242661448136, 'Min': 0.07216242661448136, 'Flat': 0.5009784735812133}
+Doc_code conflict {'Max': 4040, 'Min': 1, 'Type': 10, '%': 0.002446183953033268}
+Kmeans balance {'Avg': 0.5121086105675147, 'Max': 0.5121086105675147, 'Min': 0.5121086105675147, 'Flat': 0.5121086105675147}
+Kmeans conflict {'Max': 31, 'Min': 3, 'Type': 512, '%': 0.12524461839530332}
+out_bm25/model-1
+## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+Copy 0.weight torch.Size([512, 768]) from torch.Size([512, 768])
+data size=2047
+Training out_bm25/model-1 0
+Initialization complete
+Iteration  0, inertia 7467.189
+Iteration  1, inertia 4945.549
+Iteration  2, inertia 4869.779
+Iteration  3, inertia 4846.236
+Iteration  4, inertia 4836.300
+Iteration  5, inertia 4831.726
+Iteration  6, inertia 4829.059
+Iteration  7, inertia 4827.337
+Iteration  8, inertia 4826.938
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7484.589
+Iteration  1, inertia 4948.125
+Iteration  2, inertia 4869.047
+Iteration  3, inertia 4846.877
+Iteration  4, inertia 4837.437
+Iteration  5, inertia 4833.255
+Iteration  6, inertia 4831.966
+Iteration  7, inertia 4830.839
+Iteration  8, inertia 4830.248
+Iteration  9, inertia 4829.747
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7417.834
+Iteration  1, inertia 4931.646
+Iteration  2, inertia 4857.118
+Iteration  3, inertia 4836.413
+Iteration  4, inertia 4826.904
+Iteration  5, inertia 4821.552
+Iteration  6, inertia 4819.338
+Iteration  7, inertia 4818.647
+Iteration  8, inertia 4818.314
+Iteration  9, inertia 4817.772
+Initialization complete
+Iteration  0, inertia 7443.942
+Iteration  1, inertia 4931.376
+Iteration  2, inertia 4851.545
+Iteration  3, inertia 4825.307
+Iteration  4, inertia 4818.898
+Iteration  5, inertia 4816.094
+Iteration  6, inertia 4815.283
+Converged at iteration 6: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7448.029
+Iteration  1, inertia 4945.602
+Iteration  2, inertia 4868.738
+Iteration  3, inertia 4847.773
+Iteration  4, inertia 4841.526
+Iteration  5, inertia 4836.727
+Iteration  6, inertia 4832.313
+Iteration  7, inertia 4829.811
+Iteration  8, inertia 4828.973
+Iteration  9, inertia 4828.802
+Initialization complete
+Iteration  0, inertia 7442.814
+Iteration  1, inertia 4951.527
+Iteration  2, inertia 4878.126
+Iteration  3, inertia 4855.657
+Iteration  4, inertia 4845.774
+Iteration  5, inertia 4841.903
+Iteration  6, inertia 4840.556
+Iteration  7, inertia 4839.945
+Iteration  8, inertia 4839.160
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7446.228
+Iteration  1, inertia 4925.942
+Iteration  2, inertia 4852.059
+Iteration  3, inertia 4832.962
+Iteration  4, inertia 4826.996
+Iteration  5, inertia 4823.894
+Iteration  6, inertia 4822.708
+Iteration  7, inertia 4822.012
+Iteration  8, inertia 4821.776
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7473.116
+Iteration  1, inertia 4944.765
+Iteration  2, inertia 4863.098
+Iteration  3, inertia 4838.719
+Iteration  4, inertia 4830.699
+Iteration  5, inertia 4827.526
+Iteration  6, inertia 4826.548
+Iteration  7, inertia 4826.092
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7433.017
+Iteration  1, inertia 4934.956
+Iteration  2, inertia 4857.274
+Iteration  3, inertia 4833.133
+Iteration  4, inertia 4825.643
+Iteration  5, inertia 4824.283
+Iteration  6, inertia 4823.195
+Iteration  7, inertia 4823.051
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 4.767466e-07
+Initialization complete
+Iteration  0, inertia 7444.833
+Iteration  1, inertia 4942.282
+Iteration  2, inertia 4873.395
+Iteration  3, inertia 4851.546
+Iteration  4, inertia 4839.964
+Iteration  5, inertia 4837.115
+Iteration  6, inertia 4836.925
+Converged at iteration 6: center shift 0.000000e+00 within tolerance 4.767466e-07
+Save model out_bm25/model-1/0.pt
+Save model out_bm25/model-1/9.pt
+Save model out_bm25/model-1/18.pt
+Save model out_bm25/model-1/27.pt
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "dataset/ms_marco_bm25_1208/train_retrieval_ms_marco.json",
+  "dev_data": "dataset/ms_marco_bm25_1208/validation_retrieval_ms_marco.json",
+  "corpus_data": "dataset/ms_marco_bm25_1208/legal_corpus_ms_marco.json",
+  "save_path": "out_bm25/model"
+}
+out_bm25/model-1-pre
+data size=2047
+Training out_bm25/model-1-pre 0
+Save model out_bm25/model-1-pre/0.pt
+DR evaluation out_bm25/model-1-pre
+1116 4088
+####################
+DR evaluation out_bm25/model-1-pre/0.pt
+## Model # new keys in file: [] # no match keys: []
+(4088, 768)
+build index of 4088 instances, time cost =0.009928464889526367
+search 1116 queries, time cost =0.024910449981689453
+Doc_code balance {'Avg': 0.06751467710371817, 'Max': 0.06751467710371817, 'Min': 0.06751467710371817, 'Flat': 0.5009784735812133}
+Doc_code conflict {'Max': 3966, 'Min': 1, 'Type': 5, '%': 0.001223091976516634}
+Kmeans balance {'Avg': 0.5100293542074363, 'Max': 0.5100293542074363, 'Min': 0.5100293542074363, 'Flat': 0.5100293542074363}
+Kmeans conflict {'Max': 29, 'Min': 3, 'Type': 512, '%': 0.12524461839530332}
+out_bm25/model-1
+## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+Copy 0.weight torch.Size([512, 768]) from torch.Size([512, 768])
+data size=2047
+Training out_bm25/model-1 0
+Initialization complete
+Iteration  0, inertia 3682.159
+Iteration  1, inertia 1373.450
+Iteration  2, inertia 893.762
+Iteration  3, inertia 883.197
+Iteration  4, inertia 881.652
+Iteration  5, inertia 881.108
+Iteration  6, inertia 880.746
+Iteration  7, inertia 880.459
+Iteration  8, inertia 880.317
+Iteration  9, inertia 880.239
+Initialization complete
+Iteration  0, inertia 3638.224
+Iteration  1, inertia 1375.167
+Iteration  2, inertia 899.235
+Iteration  3, inertia 884.474
+Iteration  4, inertia 882.547
+Iteration  5, inertia 881.276
+Iteration  6, inertia 880.787
+Iteration  7, inertia 880.525
+Iteration  8, inertia 880.400
+Iteration  9, inertia 880.271
+Initialization complete
+Iteration  0, inertia 3701.153
+Iteration  1, inertia 1370.930
+Iteration  2, inertia 894.491
+Iteration  3, inertia 883.261
+Iteration  4, inertia 881.460
+Iteration  5, inertia 880.162
+Iteration  6, inertia 879.493
+Iteration  7, inertia 879.123
+Iteration  8, inertia 878.855
+Iteration  9, inertia 878.693
+Initialization complete
+Iteration  0, inertia 3707.882
+Iteration  1, inertia 1372.749
+Iteration  2, inertia 893.547
+Iteration  3, inertia 882.922
+Iteration  4, inertia 881.287
+Iteration  5, inertia 880.755
+Iteration  6, inertia 880.386
+Iteration  7, inertia 880.105
+Iteration  8, inertia 879.931
+Iteration  9, inertia 879.843
+Initialization complete
+Iteration  0, inertia 3664.232
+Iteration  1, inertia 1369.440
+Iteration  2, inertia 893.473
+Iteration  3, inertia 883.154
+Iteration  4, inertia 881.840
+Iteration  5, inertia 881.145
+Iteration  6, inertia 880.492
+Iteration  7, inertia 880.186
+Iteration  8, inertia 879.879
+Iteration  9, inertia 879.724
+Initialization complete
+Iteration  0, inertia 3628.566
+Iteration  1, inertia 1365.294
+Iteration  2, inertia 892.053
+Iteration  3, inertia 880.403
+Iteration  4, inertia 878.316
+Iteration  5, inertia 877.160
+Iteration  6, inertia 876.585
+Iteration  7, inertia 876.187
+Iteration  8, inertia 876.087
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.035996e-07
+Initialization complete
+Iteration  0, inertia 3514.867
+Iteration  1, inertia 1336.107
+Iteration  2, inertia 904.444
+Iteration  3, inertia 886.374
+Iteration  4, inertia 884.735
+Iteration  5, inertia 884.169
+Iteration  6, inertia 883.711
+Iteration  7, inertia 883.294
+Iteration  8, inertia 882.749
+Iteration  9, inertia 882.421
+Initialization complete
+Iteration  0, inertia 3672.754
+Iteration  1, inertia 1377.539
+Iteration  2, inertia 895.213
+Iteration  3, inertia 884.660
+Iteration  4, inertia 882.947
+Iteration  5, inertia 882.192
+Iteration  6, inertia 881.841
+Iteration  7, inertia 881.731
+Iteration  8, inertia 881.608
+Iteration  9, inertia 881.581
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 1.035996e-07
+Initialization complete
+Iteration  0, inertia 3672.341
+Iteration  1, inertia 1373.924
+Iteration  2, inertia 894.749
+Iteration  3, inertia 884.116
+Iteration  4, inertia 882.354
+Iteration  5, inertia 881.555
+Iteration  6, inertia 881.052
+Iteration  7, inertia 880.809
+Iteration  8, inertia 880.534
+Iteration  9, inertia 880.431
+Initialization complete
+Iteration  0, inertia 3658.708
+Iteration  1, inertia 1372.855
+Iteration  2, inertia 895.469
+Iteration  3, inertia 885.231
+Iteration  4, inertia 883.363
+Iteration  5, inertia 882.620
+Iteration  6, inertia 882.343
+Iteration  7, inertia 882.190
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.035996e-07
+Save model out_bm25/model-1/0.pt
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "dataset/ms_marco_bm25_1208/train_retrieval_ms_marco.json",
+  "dev_data": "dataset/ms_marco_bm25_1208/validation_retrieval_ms_marco.json",
+  "corpus_data": "dataset/ms_marco_bm25_1208/legal_corpus_ms_marco.json",
+  "save_path": "out_bm25/model"
+}
+out_bm25/model-1-pre
+data size=2047
+Training out_bm25/model-1-pre 0
+====Input Arguments====
+{
+  "model_name": "t5-base",
+  "code_num": 512,
+  "max_length": 3,
+  "train_data": "dataset/ms_marco_bm25_1208/train_retrieval_ms_marco.json",
+  "dev_data": "dataset/ms_marco_bm25_1208/validation_retrieval_ms_marco.json",
+  "corpus_data": "dataset/ms_marco_bm25_1208/legal_corpus_ms_marco.json",
+  "save_path": "out_bm25/model"
+}
+out_bm25/model-1-pre
+data size=2047
+Training out_bm25/model-1-pre 0
+Save model out_bm25/model-1-pre/0.pt
+DR evaluation out_bm25/model-1-pre
+1116 4088
+####################
+DR evaluation out_bm25/model-1-pre/0.pt
+## Model # new keys in file: [] # no match keys: []
+(4088, 768)
+build index of 4088 instances, time cost =0.008594036102294922
+search 1116 queries, time cost =0.0263369083404541
+Doc_code balance {'Avg': 0.0821917808219178, 'Max': 0.0821917808219178, 'Min': 0.0821917808219178, 'Flat': 0.514187866927593}
+Doc_code conflict {'Max': 2234, 'Min': 2, 'Type': 14, '%': 0.003424657534246575}
+Kmeans balance {'Avg': 0.5103962818003913, 'Max': 0.5103962818003913, 'Min': 0.5103962818003913, 'Flat': 0.5103962818003913}
+Kmeans conflict {'Max': 35, 'Min': 3, 'Type': 512, '%': 0.12524461839530332}
+out_bm25/model-1
+## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: []
+Copy 0.weight torch.Size([512, 768]) from torch.Size([512, 768])
+data size=2047
+Training out_bm25/model-1 0
+Save model out_bm25/model-1/0.pt
+Save model out_bm25/model-1/9.pt
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+Training out_bm25/model-1 10
+DR evaluation out_bm25/model-1
+1116 4088
+####################
+DR evaluation out_bm25/model-1/0.pt
+## Model # new keys in file: [] # no match keys: []
+(4088, 768)
+build index of 4088 instances, time cost =0.009720563888549805
+search 1116 queries, time cost =0.023298263549804688
+Doc_code balance {'Avg': 0.10543052837573386, 'Max': 0.10543052837573386, 'Min': 0.10543052837573386, 'Flat': 0.5084393346379648}
+Doc_code conflict {'Max': 1739, 'Min': 1, 'Type': 35, '%': 0.008561643835616438}
+Kmeans balance {'Avg': 0.5144324853228963, 'Max': 0.5144324853228963, 'Min': 0.5144324853228963, 'Flat': 0.5144324853228963}
+Kmeans conflict {'Max': 39, 'Min': 3, 'Type': 512, '%': 0.12524461839530332}
+####################
+DR evaluation out_bm25/model-1/9.pt
+## Model # new keys in file: [] # no match keys: []
+(4088, 768)
+build index of 4088 instances, time cost =0.009605169296264648
+search 1116 queries, time cost =0.023306608200073242
+Doc_code balance {'Avg': 0.06335616438356162, 'Max': 0.06335616438356162, 'Min': 0.06335616438356162, 'Flat': 0.10078277886497067}
+Doc_code conflict {'Max': 4088, 'Min': 4088, 'Type': 1, '%': 0.0002446183953033268}
+Kmeans balance {'Avg': 0.5154109589041096, 'Max': 0.5154109589041096, 'Min': 0.5154109589041096, 'Flat': 0.5154109589041096}
+Kmeans conflict {'Max': 30, 'Min': 3, 'Type': 512, '%': 0.12524461839530332}
+Test out_bm25/model-1/9.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.07795698924731183, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.004369380002869114, 'nDCG@10': 0.003812271067894676}
+{'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.07795698924731183, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.004369380002869114, 'nDCG@10': 0.003812271067894676}
+{'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.07795698924731183, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.004369380002869114, 'nDCG@10': 0.003812271067894676}
+Test out_bm25/model-1/0.pt
+## Model # new keys in file: [] # no match keys: []
+Test {'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.02956989247311828, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.0031010181160776567, 'nDCG@10': 0.003812271067894675}
+{'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.02956989247311828, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.0031010181160776567, 'nDCG@10': 0.003812271067894675}
+{'R@1': 0.0008960573476702509, 'R@10': 0.008064516129032258, 'R@100': 0.02956989247311828, 'MRR@10': 0.0025349177902941346, 'MRR@100': 0.0031010181160776567, 'nDCG@10': 0.003812271067894675}
+out_bm25/model-2-pre
+## T5ForConditionalGeneration # new keys in file: [] # no match keys: []
+## ModuleList # new keys in file: [] # no match keys: ['1.weight']
+## ModuleList # new keys in file: [] # no match keys: ['1.weight']
+Copy 0.weight torch.Size([512, 768]) from torch.Size([512, 768])
+data size=2047
+Training out_bm25/model-2-pre 0
+Save model out_bm25/model-2-pre/0.pt
+Save model out_bm25/model-2-pre/9.pt
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+Training out_bm25/model-2-pre 10
+DR evaluation out_bm25/model-2-pre
+1116 4088
+####################
+DR evaluation out_bm25/model-2-pre/0.pt
+## Model # new keys in file: [] # no match keys: []
+Initialization complete
+Iteration  0, inertia 3936.489
+Iteration  1, inertia 2620.434
+Iteration  2, inertia 2576.930
+Iteration  3, inertia 2563.833
+Iteration  4, inertia 2558.418
+Iteration  5, inertia 2556.007
+Iteration  6, inertia 2554.974
+Iteration  7, inertia 2554.367
+Iteration  8, inertia 2554.257
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44088.016
+Iteration  1, inertia 28925.305
+Iteration  2, inertia 28487.127
+Iteration  3, inertia 28322.340
+Iteration  4, inertia 28280.410
+Iteration  5, inertia 28259.045
+Iteration  6, inertia 28255.691
+Iteration  7, inertia 28254.158
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 124.857
+Iteration  1, inertia 79.910
+Iteration  2, inertia 78.569
+Iteration  3, inertia 78.212
+Iteration  4, inertia 78.030
+Iteration  5, inertia 77.949
+Iteration  6, inertia 77.911
+Iteration  7, inertia 77.890
+Iteration  8, inertia 77.875
+Iteration  9, inertia 77.870
+Initialization complete
+Iteration  0, inertia 3941.154
+Iteration  1, inertia 2629.047
+Iteration  2, inertia 2588.189
+Iteration  3, inertia 2575.503
+Iteration  4, inertia 2569.356
+Iteration  5, inertia 2565.764
+Iteration  6, inertia 2565.120
+Iteration  7, inertia 2564.464
+Iteration  8, inertia 2563.744
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44053.141
+Iteration  1, inertia 28812.941
+Iteration  2, inertia 28358.824
+Iteration  3, inertia 28235.518
+Iteration  4, inertia 28199.855
+Iteration  5, inertia 28186.121
+Iteration  6, inertia 28179.336
+Iteration  7, inertia 28176.676
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 124.965
+Iteration  1, inertia 79.837
+Iteration  2, inertia 78.507
+Iteration  3, inertia 78.112
+Iteration  4, inertia 77.957
+Iteration  5, inertia 77.896
+Iteration  6, inertia 77.852
+Iteration  7, inertia 77.816
+Iteration  8, inertia 77.795
+Iteration  9, inertia 77.770
+Initialization complete
+Iteration  0, inertia 3946.896
+Iteration  1, inertia 2636.396
+Iteration  2, inertia 2596.988
+Iteration  3, inertia 2587.582
+Iteration  4, inertia 2583.649
+Iteration  5, inertia 2581.745
+Iteration  6, inertia 2581.071
+Iteration  7, inertia 2580.877
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44127.578
+Iteration  1, inertia 28847.582
+Iteration  2, inertia 28393.803
+Iteration  3, inertia 28269.199
+Iteration  4, inertia 28230.051
+Iteration  5, inertia 28222.750
+Converged at iteration 5: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 125.807
+Iteration  1, inertia 80.031
+Iteration  2, inertia 78.719
+Iteration  3, inertia 78.354
+Iteration  4, inertia 78.159
+Iteration  5, inertia 78.073
+Iteration  6, inertia 78.024
+Iteration  7, inertia 77.969
+Iteration  8, inertia 77.938
+Iteration  9, inertia 77.926
+Initialization complete
+Iteration  0, inertia 3933.121
+Iteration  1, inertia 2637.166
+Iteration  2, inertia 2592.177
+Iteration  3, inertia 2577.842
+Iteration  4, inertia 2572.948
+Iteration  5, inertia 2570.902
+Iteration  6, inertia 2569.627
+Iteration  7, inertia 2568.279
+Iteration  8, inertia 2567.576
+Iteration  9, inertia 2567.200
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 43740.328
+Iteration  1, inertia 28810.508
+Iteration  2, inertia 28427.291
+Iteration  3, inertia 28303.703
+Iteration  4, inertia 28261.332
+Iteration  5, inertia 28247.059
+Iteration  6, inertia 28246.025
+Iteration  7, inertia 28244.402
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 126.314
+Iteration  1, inertia 80.548
+Iteration  2, inertia 79.035
+Iteration  3, inertia 78.642
+Iteration  4, inertia 78.470
+Iteration  5, inertia 78.393
+Iteration  6, inertia 78.353
+Iteration  7, inertia 78.330
+Iteration  8, inertia 78.314
+Iteration  9, inertia 78.297
+Initialization complete
+Iteration  0, inertia 3939.367
+Iteration  1, inertia 2631.820
+Iteration  2, inertia 2590.912
+Iteration  3, inertia 2579.843
+Iteration  4, inertia 2575.955
+Iteration  5, inertia 2574.837
+Iteration  6, inertia 2574.697
+Iteration  7, inertia 2574.248
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44004.691
+Iteration  1, inertia 29015.371
+Iteration  2, inertia 28514.668
+Iteration  3, inertia 28410.262
+Iteration  4, inertia 28372.811
+Iteration  5, inertia 28348.639
+Iteration  6, inertia 28341.402
+Iteration  7, inertia 28340.479
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 125.013
+Iteration  1, inertia 79.994
+Iteration  2, inertia 78.468
+Iteration  3, inertia 78.106
+Iteration  4, inertia 77.970
+Iteration  5, inertia 77.879
+Iteration  6, inertia 77.817
+Iteration  7, inertia 77.779
+Iteration  8, inertia 77.749
+Iteration  9, inertia 77.717
+Initialization complete
+Iteration  0, inertia 3933.012
+Iteration  1, inertia 2623.106
+Iteration  2, inertia 2585.672
+Iteration  3, inertia 2575.897
+Iteration  4, inertia 2572.459
+Iteration  5, inertia 2571.286
+Iteration  6, inertia 2571.047
+Iteration  7, inertia 2570.563
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44171.332
+Iteration  1, inertia 28814.318
+Iteration  2, inertia 28381.607
+Iteration  3, inertia 28228.432
+Iteration  4, inertia 28157.723
+Iteration  5, inertia 28121.184
+Iteration  6, inertia 28103.859
+Iteration  7, inertia 28093.629
+Iteration  8, inertia 28091.820
+Iteration  9, inertia 28089.391
+Initialization complete
+Iteration  0, inertia 127.465
+Iteration  1, inertia 80.661
+Iteration  2, inertia 79.118
+Iteration  3, inertia 78.791
+Iteration  4, inertia 78.681
+Iteration  5, inertia 78.601
+Iteration  6, inertia 78.545
+Iteration  7, inertia 78.494
+Iteration  8, inertia 78.451
+Iteration  9, inertia 78.440
+Initialization complete
+Iteration  0, inertia 3927.931
+Iteration  1, inertia 2632.709
+Iteration  2, inertia 2590.688
+Iteration  3, inertia 2579.045
+Iteration  4, inertia 2577.194
+Iteration  5, inertia 2576.303
+Iteration  6, inertia 2575.430
+Iteration  7, inertia 2574.929
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44324.234
+Iteration  1, inertia 28968.045
+Iteration  2, inertia 28483.141
+Iteration  3, inertia 28373.320
+Iteration  4, inertia 28325.000
+Iteration  5, inertia 28303.865
+Iteration  6, inertia 28294.664
+Iteration  7, inertia 28288.273
+Iteration  8, inertia 28281.689
+Iteration  9, inertia 28270.887
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 124.529
+Iteration  1, inertia 80.015
+Iteration  2, inertia 78.711
+Iteration  3, inertia 78.394
+Iteration  4, inertia 78.248
+Iteration  5, inertia 78.138
+Iteration  6, inertia 78.080
+Iteration  7, inertia 78.032
+Iteration  8, inertia 78.005
+Iteration  9, inertia 77.988
+Initialization complete
+Iteration  0, inertia 3935.159
+Iteration  1, inertia 2632.055
+Iteration  2, inertia 2592.574
+Iteration  3, inertia 2582.408
+Iteration  4, inertia 2579.071
+Iteration  5, inertia 2577.447
+Iteration  6, inertia 2576.337
+Iteration  7, inertia 2575.884
+Iteration  8, inertia 2575.689
+Converged at iteration 8: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44057.980
+Iteration  1, inertia 28872.086
+Iteration  2, inertia 28418.895
+Iteration  3, inertia 28323.850
+Iteration  4, inertia 28291.883
+Iteration  5, inertia 28278.730
+Iteration  6, inertia 28271.469
+Iteration  7, inertia 28267.129
+Iteration  8, inertia 28265.504
+Iteration  9, inertia 28260.258
+Converged at iteration 9: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 125.069
+Iteration  1, inertia 80.037
+Iteration  2, inertia 78.433
+Iteration  3, inertia 78.019
+Iteration  4, inertia 77.797
+Iteration  5, inertia 77.707
+Iteration  6, inertia 77.660
+Iteration  7, inertia 77.639
+Iteration  8, inertia 77.614
+Iteration  9, inertia 77.598
+Initialization complete
+Iteration  0, inertia 3926.852
+Iteration  1, inertia 2621.142
+Iteration  2, inertia 2580.282
+Iteration  3, inertia 2568.799
+Iteration  4, inertia 2564.415
+Iteration  5, inertia 2562.971
+Iteration  6, inertia 2562.566
+Iteration  7, inertia 2562.497
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 1.952254e-07
+Initialization complete
+Iteration  0, inertia 44037.734
+Iteration  1, inertia 28893.109
+Iteration  2, inertia 28365.938
+Iteration  3, inertia 28245.715
+Iteration  4, inertia 28193.156
+Iteration  5, inertia 28177.955
+Iteration  6, inertia 28174.002
+Iteration  7, inertia 28172.941
+Converged at iteration 7: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 123.946
+Iteration  1, inertia 79.831
+Iteration  2, inertia 78.331
+Iteration  3, inertia 77.882
+Iteration  4, inertia 77.713
+Iteration  5, inertia 77.626
+Iteration  6, inertia 77.577
+Iteration  7, inertia 77.545
+Iteration  8, inertia 77.525
+Iteration  9, inertia 77.514
+Initialization complete
+Iteration  0, inertia 3945.768
+Iteration  1, inertia 2633.302
+Iteration  2, inertia 2594.968
+Iteration  3, inertia 2584.307
+Iteration  4, inertia 2580.829
+Iteration  5, inertia 2578.986
+Iteration  6, inertia 2577.803
+Iteration  7, inertia 2577.509
+Iteration  8, inertia 2577.259
+Iteration  9, inertia 2577.018
+Initialization complete
+Iteration  0, inertia 44061.352
+Iteration  1, inertia 28883.785
+Iteration  2, inertia 28458.268
+Iteration  3, inertia 28352.898
+Iteration  4, inertia 28325.787
+Iteration  5, inertia 28311.832
+Iteration  6, inertia 28310.891
+Converged at iteration 6: center shift 0.000000e+00 within tolerance 3.707051e-06
+Initialization complete
+Iteration  0, inertia 124.431
+Iteration  1, inertia 79.770
+Iteration  2, inertia 78.597
+Iteration  3, inertia 78.178
+Iteration  4, inertia 78.004
+Iteration  5, inertia 77.903
+Iteration  6, inertia 77.869
+Iteration  7, inertia 77.855
+Iteration  8, inertia 77.840
+Iteration  9, inertia 77.834
